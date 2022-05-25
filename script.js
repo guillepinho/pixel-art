@@ -74,7 +74,7 @@ function generateRandomColors() {
 }
 
 function setRandomColors() {
-  for (let i = 1; i < palette.length; i += 1) {
+  for (let i = 1; i < palette.length - 1; i += 1) {
     palette[i].style.backgroundColor = generateRandomColors();
   }
 }

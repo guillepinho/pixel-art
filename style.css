@@ -43,6 +43,10 @@ header {
     background-color: rgb(233, 236, 239);
 }
 
+#eraser {
+    background-color: rgb(255, 255, 255);
+}
+
 /* Buttons e Inputs */
 .buttons {
     margin-bottom: 20px;
