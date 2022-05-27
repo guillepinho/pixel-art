@@ -12,6 +12,11 @@ header {
     flex-flow: column wrap;
 }
 
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 #color-palette {
     display: flex;
     flex-flow: row wrap;
