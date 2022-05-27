@@ -1,3 +1,8 @@
+// Mouse click listener
+let clickVar;
+window.addEventListener('mousedown', () => { clickVar = true; });
+window.addEventListener('mouseup', () => { clickVar = false; });
+
 // Declarations
 const palette = document.querySelectorAll('.color');
 const pixelBoard = document.querySelector('#pixel-board');
@@ -14,6 +19,7 @@ function changeColor(event) {
 }
 
 function putColor(event) {
+  if (!clickVar) return;
   const { target } = event;
   const selected = document.querySelector('.selected');
   const colorFrom = window.getComputedStyle(selected, null).getPropertyValue('background-color');
@@ -40,6 +46,7 @@ function clearPixels() {
 function addListenerPixels() {
   const pixelsT = document.querySelectorAll('.pixel');
   pixelsT.forEach((item) => {
+    item.addEventListener('mousemove', putColor);
     item.addEventListener('click', putColor);
   });
 }
@@ -75,13 +82,25 @@ function generateRandomColors() {
 
 function setRandomColors() {
   for (let i = 1; i < palette.length - 1; i += 1) {
-    palette[i].style.backgroundColor = generateRandomColors();
+    if (!palette[i].classList.contains('lock-color')) {
+      palette[i].style.backgroundColor = generateRandomColors();
+    }
+  }
+}
+
+function lockColor(event) {
+  const { target } = event;
+  if (target.classList.contains('lock-color')) {
+    target.classList.remove('lock-color')
+  } else {
+    target.classList.add('lock-color');
   }
 }
 
 // Usage
 palette.forEach((item) => {
   item.addEventListener('click', changeColor);
+  item.addEventListener('dblclick', lockColor);
 });
 
 addListenerPixels();

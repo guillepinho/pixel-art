@@ -26,21 +26,15 @@ header {
     border-radius: 2px;
 }
 
+#color-alert {
+    font-style: italic;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 /* Cores */
 #darker {
     background-color: rgb(0, 0, 0);
-}
-
-#dark {
-    background-color: rgb(73, 80, 87);
-}
-
-#light {
-    background-color: rgb(206, 212, 218);
-}
-
-#lighter {
-    background-color: rgb(233, 236, 239);
 }
 
 #eraser {
@@ -63,7 +57,7 @@ header {
 button {
     font-family: 'VT323', monospace;
     font-size: 18px;
-    background-color: lightgray;
+    background-color: rgb(204, 229, 238);
     border-radius: 5px;
 }
 
@@ -106,7 +100,8 @@ main {
     height: 40px;
     background-color: white;
     border: 1px solid black;
-    margin: 0.5px;
+    margin-right: 1px;
+    margin-bottom: 1px;
     border-radius: 2px;
 }
 
